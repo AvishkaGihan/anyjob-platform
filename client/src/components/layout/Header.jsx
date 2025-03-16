@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import SearchBar from "../ui/SearchBar";
+import { NAV_ITEMS } from "../../utils/constants";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,15 +45,15 @@ const Header = () => {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
           <nav className="flex gap-8">
-            {["Home", "Services", "About", "Contact"].map((item, index) => (
+            {NAV_ITEMS.map((item) => (
               <Link
-                key={index}
-                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                key={item.name}
+                to={item.path}
                 className={`relative overflow-hidden font-medium transition-colors duration-300 hover:text-blue-green-500 ${
                   scrolled ? "text-prussian-blue-400" : "text-white"
                 }`}
               >
-                <span>{item}</span>
+                <span>{item.name}</span>
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-green-500 transform translate-y-1 transition-transform duration-300 origin-left scale-x-0 hover:scale-x-100"></span>
               </Link>
             ))}

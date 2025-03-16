@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import ServiceCard from "../ui/ServiceCard";
+import { categories } from "../../utils/data";
 
 const ServiceCategories = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // Intersection Observer to trigger animations when scrolled into view
   useEffect(() => {
+    const targetElement = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -17,68 +18,16 @@ const ServiceCategories = () => {
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (targetElement) {
+      observer.observe(targetElement);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (targetElement) {
+        observer.unobserve(targetElement);
       }
     };
   }, []);
-
-  // Mock data - replace with API calls in production
-  const categories = [
-    {
-      id: 1,
-      title: "Plumbing",
-      icon: "🔧",
-      description: "Faucet repairs, pipe installations, and more",
-    },
-    {
-      id: 2,
-      title: "Cleaning",
-      icon: "🧹",
-      description: "Home, office, and commercial cleaning services",
-    },
-    {
-      id: 3,
-      title: "Babysitting",
-      icon: "👶",
-      description: "Childcare services by trusted professionals",
-    },
-    {
-      id: 4,
-      title: "Gardening",
-      icon: "🌱",
-      description: "Landscaping and garden maintenance",
-    },
-    {
-      id: 5,
-      title: "Electrical",
-      icon: "💡",
-      description: "Installations, repairs, and safety inspections",
-    },
-    {
-      id: 6,
-      title: "Tutoring",
-      icon: "📚",
-      description: "Academic help for all ages and subjects",
-    },
-    {
-      id: 7,
-      title: "Pet Care",
-      icon: "🐕",
-      description: "Dog walking, grooming, and sitting services",
-    },
-    {
-      id: 8,
-      title: "Moving",
-      icon: "📦",
-      description: "Help with packing, loading, and relocation",
-    },
-  ];
 
   return (
     <section
@@ -121,17 +70,6 @@ const ServiceCategories = () => {
               <ServiceCard service={category} />
             </div>
           ))}
-        </div>
-
-        <div
-          className={`mt-16 text-center transition-all duration-1000 delay-500 transform ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
-        >
-          <button className="group px-8 py-4 bg-blue-green-500 text-white font-semibold rounded-lg transition-all duration-300 hover:bg-blue-green-600 hover:shadow-glow-blue transform hover:-translate-y-1 relative overflow-hidden">
-            <span className="relative z-10">View All Categories</span>
-            <span className="absolute bottom-0 left-0 right-0 h-0 bg-blue-green-400 group-hover:h-full transition-all duration-300 ease-in-out -z-0"></span>
-          </button>
         </div>
       </div>
     </section>
