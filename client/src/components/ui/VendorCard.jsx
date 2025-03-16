@@ -38,10 +38,7 @@ const VendorCard = ({ vendor }) => {
   };
 
   return (
-    <Link
-      to={`/vendors/${id}`}
-      className="bg-white rounded-xl overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-lg relative group"
-    >
+    <div className="bg-white rounded-xl overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-lg relative group">
       {/* Subtle border that appears on hover */}
       <div className="absolute inset-0 rounded-xl border-2 border-blue-green-500/0 group-hover:border-blue-green-500/20 transition-all duration-300"></div>
 
@@ -70,11 +67,14 @@ const VendorCard = ({ vendor }) => {
           {service}
         </p>
 
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mb-4">
           <div className="text-ut-orange-500 font-bold">{price}</div>
 
           {/* View Profile link with subtle animation */}
-          <div className="flex items-center text-sm text-blue-green-500 font-medium opacity-70 group-hover:opacity-100 transition-all duration-300">
+          <Link
+            to={`/vendors/${id}`}
+            className="flex items-center text-sm text-blue-green-500 font-medium opacity-70 hover:opacity-100 transition-all duration-300"
+          >
             <span className="relative">
               View Profile
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-green-500 group-hover:w-full transition-all duration-300"></span>
@@ -93,8 +93,16 @@ const VendorCard = ({ vendor }) => {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-          </div>
+          </Link>
         </div>
+
+        {/* Book Now Button */}
+        <Link
+          to={`/book/${id}`}
+          className="w-full text-center py-2.5 px-4 bg-selective-yellow-600 text-prussian-blue-200 rounded-lg font-medium transition-all duration-300 hover:bg-selective-yellow-700 hover:shadow-md transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-selective-yellow-300 focus:ring-offset-2"
+        >
+          Book Now
+        </Link>
       </div>
 
       {/* Availability indicator with improved styling */}
@@ -107,7 +115,7 @@ const VendorCard = ({ vendor }) => {
 
       {/* Bottom accent bar that appears on hover */}
       <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-green-500 to-selective-yellow-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-left"></div>
-    </Link>
+    </div>
   );
 };
 
