@@ -1,6 +1,8 @@
-import HeroSection from '../../components/sections/home/HeroSection';
-import ServiceCategories from '../../components/sections/home/ServiceCategories';
-import VendorsSection from '../../components/sections/home/VendorsSection';
+import { lazy } from 'react';
+
+const HeroSection = lazy(() => import('../../components/sections/home/HeroSection'));
+const ServiceCategories = lazy(() => import('../../components/sections/home/ServiceCategories'));
+const VendorsSection = lazy(() => import('../../components/sections/home/VendorsSection'));
 
 const HomePage = () => {
     return (

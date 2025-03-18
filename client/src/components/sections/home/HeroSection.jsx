@@ -8,9 +8,10 @@ import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver"
 import { POPULAR_CATEGORIES } from "../../../utils/constants/categories";
 import { FEATURE_BADGES } from "../../../utils/constants/featureBadges";
 
-import showcaseImage from "../../../assets/images/service-showcase.jpg";
+import showcaseImage from "../../../assets/images/service-showcase.webp";
 import SearchBar from "../../common/search/SearchBar";
 import WaveDivider from "./WaveDivider";
+import Image from "../../common/Image";
 
 const HeroSection = () => {
   const dispatch = useDispatch();
@@ -191,12 +192,12 @@ const HeroSection = () => {
                 {!imageLoaded && (
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-green-500/30 to-prussian-blue-600/30 animate-pulse"></div>
                 )}
-                <img
+                <Image
                   src={showcaseImage}
                   alt="Professional service providers from AnyJob"
-                  onLoad={() => setImageLoaded(true)}
-                  style={{ opacity: imageLoaded ? 1 : 0 }}
                   className="transition-opacity duration-500 w-full h-full object-cover"
+                  onLoad={() => setImageLoaded(true)}
+                  isImageLoaded={imageLoaded}
                 />
               </div>
 

@@ -1,4 +1,3 @@
-// src/components/common/Header/Header.js
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router";
@@ -48,8 +47,6 @@ const Header = () => {
             AnyJob Refactor
           </span>
         </Link>
-
-        {/* Desktop Search & Navigation */}
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">

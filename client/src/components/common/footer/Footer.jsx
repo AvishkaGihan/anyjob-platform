@@ -1,5 +1,4 @@
-// src/components/common/Footer/Footer.js
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
 import ContactInfo from "./ContactInfo";
 import LegalLinks from "./LegalLinks";
@@ -63,4 +62,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);
