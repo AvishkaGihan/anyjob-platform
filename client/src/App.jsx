@@ -1,21 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router";
-import Header from "./components/layout/Header";
-import Homepage from "./pages/HomePage";
-import Footer from "./components/layout/Footer";
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+import Layout from './pages/Layout';
+import HomePage from './pages/homepage/HomePage';
 
 const App = () => {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            {/* Add other routes */}
+          </Route>
+        </Routes>
+      </Router>
+    </Provider>
   );
 };
 
