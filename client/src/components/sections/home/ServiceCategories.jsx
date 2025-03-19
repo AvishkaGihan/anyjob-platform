@@ -1,7 +1,8 @@
-import { useRef } from 'react';
-import { Link } from 'react-router';
-import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
-import { SERVICE_CATEGORIES } from '../../../utils/constants/categories';
+import { useRef } from "react";
+import { Link } from "react-router";
+import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
+import { SERVICE_CATEGORIES } from "../../../utils/constants/categories";
+import { ChevronRight } from "lucide-react";
 
 const ServiceCategories = () => {
   const sectionRef = useRef(null);
@@ -19,7 +20,8 @@ const ServiceCategories = () => {
             <span className="absolute -bottom-2 left-1/2 w-24 h-1 bg-ut-orange-500 transform -translate-x-1/2" />
           </h2>
           <p className="text-prussian-blue-400 max-w-2xl mx-auto text-lg">
-            Browse through our diverse range of services to find exactly what you need
+            Browse through our diverse range of services to find exactly what
+            you need
           </p>
         </div>
 
@@ -27,8 +29,11 @@ const ServiceCategories = () => {
           {SERVICE_CATEGORIES.map((category, index) => (
             <div
               key={category.id}
-              className={`transition-all duration-700 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-                }`}
+              className={`transition-all duration-700 transform ${
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-12 opacity-0"
+              }`}
               style={{ transitionDelay: `${150 * (index % 4)}ms` }}
             >
               <Link
@@ -52,20 +57,7 @@ const ServiceCategories = () => {
 
                   <div className="mt-4 flex items-center text-sm text-blue-green-500 font-medium opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                     <span>Learn more</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
+                    <ChevronRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </Link>

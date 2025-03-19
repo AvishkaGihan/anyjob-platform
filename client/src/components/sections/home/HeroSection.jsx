@@ -1,7 +1,7 @@
 // src/components/home/HeroSection.jsx
 import { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { useIntersectionObserver } from "../../../hooks/useIntersectionObserver";
 
@@ -19,7 +19,7 @@ const HeroSection = () => {
   const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
   const inputRef = useRef(null);
 
-  const [heroSearch, setHeroSearch] = useState('');
+  const [heroSearch, setHeroSearch] = useState("");
   const navigate = useNavigate();
 
   const handleHeroSearch = (term) => {
@@ -81,10 +81,11 @@ const HeroSection = () => {
           {/* Content Section */}
           <div className="order-2 lg:order-1">
             <h1
-              className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight transition-all duration-1000 transform ${isVisible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-                }`}
+              className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight transition-all duration-1000 transform ${
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+              }`}
             >
               <span className="block text-white">
                 Find <span className="text-selective-yellow-500">Expert</span>
@@ -99,17 +100,23 @@ const HeroSection = () => {
             </h1>
 
             <p
-              className={`text-lg sm:text-xl mb-8 text-sky-blue-700 font-light leading-relaxed max-w-xl transition-all duration-1000 delay-300 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-                }`}
+              className={`text-lg sm:text-xl mb-8 text-sky-blue-700 font-light leading-relaxed max-w-xl transition-all duration-1000 delay-300 transform ${
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+              }`}
             >
-              Connect with trusted professionals for any job you need done, all in one
-              platform. Quality service is just a click away.
+              Connect with trusted professionals for any job you need done, all
+              in one platform. Quality service is just a click away.
             </p>
 
             {/* Search Form */}
             <div
-              className={`transition-all duration-1000 delay-500 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-                }`}
+              className={`transition-all duration-1000 delay-500 transform ${
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+              }`}
             >
               <SearchBar
                 initialValue={heroSearch}
@@ -121,8 +128,11 @@ const HeroSection = () => {
 
             {/* Popular Categories */}
             <div
-              className={`mt-4 flex flex-wrap gap-2 transition-all duration-1000 delay-700 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-                }`}
+              className={`mt-4 flex flex-wrap gap-2 transition-all duration-1000 delay-700 transform ${
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+              }`}
             >
               {POPULAR_CATEGORIES.map((category) => (
                 <Link
@@ -138,8 +148,11 @@ const HeroSection = () => {
 
             {/* CTAs */}
             <div
-              className={`flex flex-wrap gap-5 mt-8 transition-all duration-1000 delay-900 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-                }`}
+              className={`flex flex-wrap gap-5 mt-8 transition-all duration-1000 delay-900 transform ${
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+              }`}
             >
               {/* Services CTA */}
               <Link
@@ -164,8 +177,11 @@ const HeroSection = () => {
 
             {/* Feature Badges */}
             <div
-              className={`mt-10 flex flex-wrap gap-3 transition-all duration-1000 delay-1100 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-                }`}
+              className={`mt-10 flex flex-wrap gap-3 transition-all duration-1000 delay-1100 transform ${
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+              }`}
             >
               {FEATURE_BADGES.map((badge, index) => (
                 <div
@@ -183,8 +199,11 @@ const HeroSection = () => {
 
           {/* Image Section */}
           <div
-            className={`order-1 lg:order-2 relative transition-all duration-1000 delay-200 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-              }`}
+            className={`order-1 lg:order-2 relative transition-all duration-1000 delay-200 transform ${
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
+            }`}
           >
             <div className="relative z-10 bg-white p-3 rounded-2xl shadow-lg transform rotate-1 hover:rotate-0 transition-transform duration-500">
               <div className="aspect-[4/3] lg:aspect-video rounded-lg overflow-hidden relative">
