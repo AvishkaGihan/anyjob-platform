@@ -57,7 +57,7 @@ const VendorsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {vendors.map((vendor, index) => (
+          {vendors.slice(0, 4).map((vendor, index) => (
             <div
               key={vendor.id}
               className={`transition-all duration-700 transform ${

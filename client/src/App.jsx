@@ -4,6 +4,9 @@ import { store } from "./store/store";
 import Layout from "./pages/Layout";
 import HomePage from "./pages/HomePage";
 import Services from "./pages/Services";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import Login from "./pages/Login";
 
 const App = () => {
   return (
@@ -13,7 +16,10 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/contact" element={<ContactUs />} />
           </Route>
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
     </Provider>

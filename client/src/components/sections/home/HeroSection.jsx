@@ -243,7 +243,7 @@ const HeroSection = () => {
             <div className="absolute -top-6 -left-6 w-16 h-16 bg-blue-green-500/20 rounded-full blur-md"></div>
 
             {/* Floating elements for visual interest */}
-            <div className="absolute -right-2 top-1/4 bg-white p-2 rounded-lg shadow-lg transform rotate-6 hidden md:block">
+            <div className="absolute -right-2 top-1/4 bg-white p-2 rounded-lg shadow-lg transform rotate-6 hidden md:block z-10">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-800 text-xs">
                   ✓
@@ -253,7 +253,7 @@ const HeroSection = () => {
                 </span>
               </div>
             </div>
-            <div className="absolute -left-4 bottom-1/3 bg-white p-2 rounded-lg shadow-lg transform -rotate-3 hidden md:block">
+            <div className="absolute -left-4 bottom-1/3 bg-white p-2 rounded-lg shadow-lg transform -rotate-3 hidden md:block z-10">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-blue-green-100 flex items-center justify-center text-blue-green-800 text-xs">
                   $

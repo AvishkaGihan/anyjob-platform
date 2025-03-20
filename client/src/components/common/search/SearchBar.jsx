@@ -1,6 +1,5 @@
 import { Search } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-
 const SearchBar = ({ className = "", variant = "light" }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isFocused, setIsFocused] = useState(false);
