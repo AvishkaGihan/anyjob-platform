@@ -1,7 +1,7 @@
 // components/Header/MobileMenu.js
 import { Link } from "react-router";
 import NavLinks from "./NavLinks";
-import SearchBar from "./SearchBar";
+import SearchBar from "../shared/SearchBar";
 
 const MobileMenu = ({ isMenuOpen, setIsMenuOpen }) => {
   return (

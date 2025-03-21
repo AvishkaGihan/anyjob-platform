@@ -6,7 +6,7 @@
   --color-sky-blue-200: #1b5c7a;
   --color-sky-blue-300: #288ab7;
   --color-sky-blue-400: #51aed9;
-  --color-sky-blue-500: #8ecae6; /* DEFAULT */
+  --color-sky-blue-500: #8ecae6;
   --color-sky-blue-600: #a5d5eb;
   --color-sky-blue-700: #bbdff0;
   --color-sky-blue-800: #d2eaf5;
@@ -17,7 +17,7 @@
   --color-blue-green-200: #0d3e4b;
   --color-blue-green-300: #145d70;
   --color-blue-green-400: #1a7d95;
-  --color-blue-green-500: #219ebc; /* DEFAULT */
+  --color-blue-green-500: #219ebc;
   --color-blue-green-600: #39bcdc;
   --color-blue-green-700: #6bcce5;
   --color-blue-green-800: #9cddee;
@@ -28,7 +28,7 @@
   --color-prussian-blue-200: #01131c;
   --color-prussian-blue-300: #011c2a;
   --color-prussian-blue-400: #012638;
-  --color-prussian-blue-500: #023047; /* DEFAULT */
+  --color-prussian-blue-500: #023047;
   --color-prussian-blue-600: #04699b;
   --color-prussian-blue-700: #06a3f1;
   --color-prussian-blue-800: #54c3fb;
@@ -39,7 +39,7 @@
   --color-selective-yellow-200: #684b00;
   --color-selective-yellow-300: #9c7000;
   --color-selective-yellow-400: #d09500;
-  --color-selective-yellow-500: #ffb703; /* DEFAULT */
+  --color-selective-yellow-500: #ffb703;
   --color-selective-yellow-600: #ffc637;
   --color-selective-yellow-700: #ffd569;
   --color-selective-yellow-800: #ffe39b;
@@ -50,9 +50,41 @@
   --color-ut-orange-200: #643500;
   --color-ut-orange-300: #965000;
   --color-ut-orange-400: #c86b00;
-  --color-ut-orange-500: #fb8500; /* DEFAULT */
+  --color-ut-orange-500: #fb8500;
   --color-ut-orange-600: #ff9e2f;
   --color-ut-orange-700: #ffb663;
   --color-ut-orange-800: #ffce97;
   --color-ut-orange-900: #ffe7cb;
+
+  --animate-pulse: pulse 15s infinite ease-in-out;
+  --animate-pulseSlow: pulse 20s infinite ease-in-out;
+  --animate-pulseMedium: pulse 18s infinite ease-in-out;
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+}
+
+.bg-grid-pattern {
+  background-size: 20px 20px;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.shadow-glow-blue {
+  box-shadow: 0 0 15px 5px rgba(33, 158, 188, 0.3);
+}
+
+.shadow-glow-yellow {
+  box-shadow: 0 0 15px 5px rgba(255, 183, 3, 0.3);
 }

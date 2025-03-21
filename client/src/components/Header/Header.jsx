@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
-import SearchBar from "./SearchBar";
+import SearchBar from "../shared/SearchBar";
 import MobileMenu from "./MobileMenu";
 
 const Header = () => {
